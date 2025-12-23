@@ -1,0 +1,27 @@
+Iniciando Bateria de Testes: bateria_testes_20251223_133044
+=========================================
+ INICIANDO TESTE COM 100 USUÁRIOS
+=========================================
+Resultado movido para: bateria_testes_20251223_133044/resultados_100users_2m_20251223_133044
+Aguardando 30s para o sistema estabilizar...
+=========================================
+ INICIANDO TESTE COM 300 USUÁRIOS
+=========================================
+Resultado movido para: bateria_testes_20251223_133044/resultados_300users_2m_20251223_133324
+Aguardando 30s para o sistema estabilizar...
+=========================================
+ INICIANDO TESTE COM 600 USUÁRIOS
+=========================================
+Resultado movido para: bateria_testes_20251223_133044/resultados_600users_2m_20251223_133613
+Aguardando 30s para o sistema estabilizar...
+=========================================
+ INICIANDO TESTE COM 900 USUÁRIOS
+=========================================
+Resultado movido para: bateria_testes_20251223_133044/resultados_900users_2m_20251223_133902
+Aguardando 30s para o sistema estabilizar...
+=========================================
+ INICIANDO TESTE COM 1100 USUÁRIOS
+=========================================
+Resultado movido para: bateria_testes_20251223_133044/resultados_1100users_2m_20251223_134151
+Aguardando 30s para o sistema estabilizar...
+Bateria de testes concluída. Todos os resultados estão em: bateria_testes_20251223_133044

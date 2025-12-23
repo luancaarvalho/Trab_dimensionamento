@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados do Teste Locust</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .metric {
+            display: inline-block;
+            margin: 10px 20px;
+        }
+        .metric-label {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+        }
+        .metric-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #667eea;
+            color: white;
+        }
+        .success { color: #28a745; }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        .file-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .file-list a:hover {
+            text-decoration: underline;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Resultados do Teste Locust</h1>
+        <p><strong>Data:</strong> Tue Dec 23 13:38:32 -03 2025</p>
+        <p><strong>Configuração:</strong> 600 usuários por 2m</p>
+    </div>
+
+    <div class="card">
+        <h2>📈 Métricas Principais</h2>
+        <div class="metric">
+            <div class="metric-label">RPS</div>
+            <div class="metric-value">26.280306467994574</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">P50 (ms)</div>
+            <div class="metric-value">20000.0</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">P95 (ms)</div>
+            <div class="metric-value">22000</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Total Requests</div>
+            <div class="metric-value">3396</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Falhas</div>
+            <div class="metric-value success">0</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>📁 Arquivos Disponíveis</h2>
+        <ul class="file-list">
+            <li>📊 <a href="dados_stats.csv">dados_stats.csv</a> - Estatísticas finais</li>
+            <li>📈 <a href="dados_stats_history.csv">dados_stats_history.csv</a> - Histórico por segundo</li>
+            <li>❌ <a href="dados_failures.csv">dados_failures.csv</a> - Falhas (se houver)</li>
+            <li>⚠️ <a href="dados_exceptions.csv">dados_exceptions.csv</a> - Exceções (se houver)</li>
+            <li>📄 <a href="teste_completo.log">teste_completo.log</a> - Log completo do teste</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>📋 Log do Teste</h2>
+        <pre id="logContent">Carregando...</pre>
+    </div>
+
+    <script>
+        // Carregar log
+        fetch('teste_completo.log')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('logContent').textContent = data;
+            })
+            .catch(err => {
+                document.getElementById('logContent').textContent = 'Erro ao carregar log: ' + err;
+            });
+    </script>
+</body>
+</html>
