@@ -1,0 +1,24 @@
+# Chaves privadas
+*.pem
+*.key
+
+# Credenciais
+config.sh
+
+# Logs
+*.log
+*.txt
+
+# Arquivos temporários
+.generator_ip
+.DS_Store
+
+# Resultados de testes individuais
+resultados_*users_*
+bateria_testes_*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
