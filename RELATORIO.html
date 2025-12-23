@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>RELATORIO</title>
+  <style>
+
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+svg {
+height: auto;
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+border: none;
+border-top: 1px solid #1a1a1a;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+</head>
+<body>
+<h1 id="trabalho-de-dimensionamento-de-sistemas">Trabalho de
+Dimensionamento de Sistemas</h1>
+<h2 id="identificacao">Identificacao</h2>
+<p><strong>Autores:</strong> - Luan Carvalho - 2526438 - Jose Freitas
+Alves Neto - 2519203<br />
+- Isaque Araujo Gadelha - 2519194</p>
+<p><strong>Repositorio GitHub:</strong>
+https://github.com/luancaarvalho/Trab_dimensionamento</p>
+<p><strong>Link para Otimizacoes:</strong>
+https://github.com/luancaarvalho/Trab_dimensionamento/tree/main/optimization</p>
+<hr />
+<h2 id="estrategia-adotada">Estrategia Adotada</h2>
+<h3 id="abordagem-escolhida-tuning-de-software-escalabilidade-horizontal">Abordagem
+Escolhida: <strong>Tuning de Software + Escalabilidade
+Horizontal</strong></h3>
+<p>Optamos por uma estrategia hibrida que combina:</p>
+<ol type="1">
+<li><strong>Tuning de Software (Principal):</strong> Implementacao de
+cache em nivel de servidor usando Apache mod_cache</li>
+<li><strong>Escalabilidade Horizontal:</strong> 3 instancias t3.xlarge
+(4 vCPUs, 16 GB RAM cada)</li>
+</ol>
+<h3 id="justificativa">Justificativa</h3>
+<p><strong>Por que Tuning de Software?</strong> - Experiencia previa com
+WordPress: Ja trabalhei extensivamente com WordPress e conheco suas
+caracteristicas de performance - O perfil da aplicacao WordPress e
+altamente cacheable (conteudo estatico) - Apache mod_cache oferece
+ganhos massivos de performance com custo zero de infraestrutura
+adicional - Reduz drasticamente a carga no backend (PHP/MySQL) ao servir
+conteudo direto do cache em disco - Conhecimento tecnico especifico
+sobre configuracao de cache em nivel de servidor para WordPress</p>
+<p><strong>Por que 3x t3.xlarge?</strong> - Custo horario: 3 x $0.1664/h
+= <strong>$0.4992/h</strong> (abaixo do limite de $0.50/h) -
+Configuracao balanceada entre CPU e memoria para WordPress - Load
+Balancer distribui trafego uniformemente entre as 3 instancias</p>
+<p><strong>Por que NAO escolhemos apenas Scale-out?</strong> - Scale-out
+puro (mais instancias t3.micro) seria mais caro e menos eficiente - Sem
+cache, precisariamos de ~20 instancias t3.micro para atingir o mesmo
+throughput - Custo seria: 20 x $0.0104/h = $0.208/h (mais barato MAS com
+latencia muito maior)</p>
+<hr />
+<h2 id="arquitetura-final">Arquitetura Final</h2>
+<h3 id="infraestrutura">Infraestrutura</h3>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Especificacao</th>
+<th>Quantidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aplicacao</strong></td>
+<td>t3.xlarge (4 vCPUs, 16GB RAM)</td>
+<td>3 instancias</td>
+</tr>
+<tr>
+<td><strong>Banco de Dados</strong></td>
+<td>t3.xlarge (4 vCPUs, 16GB RAM)</td>
+<td>1 instancia</td>
+</tr>
+<tr>
+<td><strong>Load Balancer</strong></td>
+<td>Application Load Balancer (ALB)</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>VPC</strong></td>
+<td>2 Subnets (publicas)</td>
+<td>us-east-1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="configuracao-de-software">Configuracao de Software</h3>
+<h4 id="apache-mod_cache-script-apache_mod_cache_otimizado.sh">1. Apache
+mod_cache (Script: <code>apache_mod_cache_otimizado.sh</code>)</h4>
+<p><strong>Parametros Criticos:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode apache"><code class="sourceCode apache"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cache em disco</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>CacheEnable<span class="st"> disk &quot;/&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>CacheRoot<span class="st"> /var/cache/httpd/mod_cache_disk</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuracao-chave para evitar 403 Forbidden</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>CacheQuickHandler off</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ignora cookies do Load Balancer</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ex">CacheIgnoreHeaders</span><span class="ch"> </span><span class="kw">Cookie</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Tempo de expiracao</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ex">CacheDefaultExpire</span><span class="ch"> </span><span class="fl">3600</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Tamanho maximo de arquivo em cache</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="ex">CacheMaxFileSize</span><span class="ch"> </span><span class="fl">10000000</span></span></code></pre></div>
+<p><strong>Racionalizacao Tecnica:</strong> -
+<code>CacheQuickHandler off</code>: Permite que cache passe pela fase de
+autorizacao do Apache, evitando conflito com headers do ALB -
+<code>CacheIgnoreHeaders Cookie</code>: Essencial para funcionar com
+Load Balancer que adiciona cookies de sessao - Cache em disco
+(<code>mod_cache_disk</code>): Mais eficiente que cache em memoria para
+WordPress</p>
+<h4 id="apache-mpm-event">2. Apache MPM Event</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode apache"><code class="sourceCode apache"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;IfModule</span><span class="at"> mpm_event_module</span><span class="fu">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">StartServers</span><span class="ch"> </span><span class="fl">3</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ch">    MinSpareThreads </span><span class="fl">75</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ch">    MaxSpareThreads </span><span class="fl">250</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ch">    ThreadsPerChild </span><span class="fl">25</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ch">    MaxRequestWorkers </span><span class="fl">400</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ch">    MaxConnectionsPerChild </span><span class="fl">1000</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ch">&lt;/IfModule&gt;</span></span></code></pre></div>
+<h4 id="php-opcache">3. PHP OPcache</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode ini"><code class="sourceCode ini"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">opcache.enable</span><span class="ot">=</span><span class="dv">1</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">opcache.memory_consumption</span><span class="ot">=</span><span class="dv">128</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">opcache.max_accelerated_files</span><span class="ot">=</span><span class="dv">10000</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">opcache.revalidate_freq</span><span class="ot">=</span><span class="dv">2</span></span></code></pre></div>
+<h4 id="keepalive-e-compressao">4. KeepAlive e Compressao</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode apache"><code class="sourceCode apache"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">KeepAlive</span><span class="ch"> </span><span class="kw">On</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">KeepAliveTimeout</span><span class="ch"> </span><span class="fl">5</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ch">MaxKeepAliveRequests </span><span class="fl">100</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># mod_deflate para compressao</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>AddOutputFilterByType<span class="st"> DEFLATE text/html text/plain text/xml text/css application/javascript</span></span></code></pre></div>
+<hr />
+<h2 id="resultados-obtidos">Resultados Obtidos</h2>
+<h3 id="teste-de-carga-100-usuarios-por-2-minutos">Teste de Carga: 100
+Usuarios por 2 Minutos</h3>
+<table>
+<thead>
+<tr>
+<th>Metrica</th>
+<th>Baseline</th>
+<th>Otimizado</th>
+<th>Melhoria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RPS Maximo</strong></td>
+<td>25.9 req/s</td>
+<td>48.3 req/s</td>
+<td>+86.5%</td>
+</tr>
+<tr>
+<td><strong>Latencia Mediana (P50)</strong></td>
+<td>980 ms</td>
+<td>4 ms</td>
+<td>99.6% mais rapido</td>
+</tr>
+<tr>
+<td><strong>Latencia P95</strong></td>
+<td>4200 ms</td>
+<td>5 ms</td>
+<td>99.88% mais rapido</td>
+</tr>
+<tr>
+<td><strong>Latencia P99</strong></td>
+<td>4800 ms</td>
+<td>18 ms</td>
+<td>99.6% mais rapido</td>
+</tr>
+<tr>
+<td><strong>Taxa de Erro</strong></td>
+<td>0%</td>
+<td>0%</td>
+<td>Mantida</td>
+</tr>
+<tr>
+<td><strong>Total de Requests</strong></td>
+<td>3,121</td>
+<td>5,765</td>
+<td>+84.7%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tabela-completa---baseline-100-usuarios">Tabela Completa -
+Baseline (100 usuarios)</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Requests</th>
+<th>Failures</th>
+<th>P50</th>
+<th>P95</th>
+<th>P99</th>
+<th>Min</th>
+<th>Max</th>
+<th>Avg</th>
+<th>RPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/</td>
+<td>707</td>
+<td>0</td>
+<td>940ms</td>
+<td>4600ms</td>
+<td>4700ms</td>
+<td>263ms</td>
+<td>4900ms</td>
+<td>1710ms</td>
+<td>5.9</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/post-detail</td>
+<td>2414</td>
+<td>0</td>
+<td>990ms</td>
+<td>4400ms</td>
+<td>4600ms</td>
+<td>258ms</td>
+<td>5000ms</td>
+<td>1736ms</td>
+<td>20.1</td>
+</tr>
+<tr>
+<td><strong>Aggregated</strong></td>
+<td><strong>Total</strong></td>
+<td><strong>3121</strong></td>
+<td><strong>0</strong></td>
+<td><strong>980ms</strong></td>
+<td><strong>4400ms</strong></td>
+<td><strong>4700ms</strong></td>
+<td><strong>258ms</strong></td>
+<td><strong>5000ms</strong></td>
+<td><strong>1730ms</strong></td>
+<td><strong>25.9</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="tabela-completa---otimizado-100-usuarios">Tabela Completa -
+Otimizado (100 usuarios)</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+</colgroup>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Requests</th>
+<th>Failures</th>
+<th>P50</th>
+<th>P95</th>
+<th>P99</th>
+<th>Min</th>
+<th>Max</th>
+<th>Avg</th>
+<th>RPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>/</td>
+<td>1285</td>
+<td>0</td>
+<td>4ms</td>
+<td>5ms</td>
+<td>17ms</td>
+<td>2.6ms</td>
+<td>476ms</td>
+<td>4.9ms</td>
+<td>10.8</td>
+</tr>
+<tr>
+<td>GET</td>
+<td>/post-detail</td>
+<td>4480</td>
+<td>0</td>
+<td>4ms</td>
+<td>5ms</td>
+<td>18ms</td>
+<td>2.4ms</td>
+<td>475ms</td>
+<td>4.6ms</td>
+<td>37.6</td>
+</tr>
+<tr>
+<td><strong>Aggregated</strong></td>
+<td><strong>Total</strong></td>
+<td><strong>5765</strong></td>
+<td><strong>0</strong></td>
+<td><strong>4ms</strong></td>
+<td><strong>5ms</strong></td>
+<td><strong>18ms</strong></td>
+<td><strong>2.4ms</strong></td>
+<td><strong>476ms</strong></td>
+<td><strong>4.7ms</strong></td>
+<td><strong>48.3</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="slos-atendidos">SLOs Atendidos</h3>
+<ul>
+<li><strong>Latencia P95 &lt; 10000ms:</strong> SIM (5ms &lt;&lt;
+10000ms)</li>
+<li><strong>Taxa de Erro &lt; 1%:</strong> SIM (0%)<br />
+</li>
+<li><strong>Throughput:</strong> +86.5% com mesmo numero de
+instancias</li>
+</ul>
+<h3 id="resultados-completos-por-carga">Resultados Completos por
+Carga</h3>
+<p>Os resultados completos de todos os testes (100, 300, 600, 900, 1100
+usuarios) estao disponiveis no repositorio em: -
+<strong>Baseline:</strong> <code>resultados/baseline/</code> -
+<strong>Otimizado:</strong> <code>resultados/otimizado/</code></p>
+<p>Cada pasta contem: - <code>index.html</code> - Relatorio interativo
+do Locust com graficos (RPS x Tempo, Latencia x Tempo, Distribuicao) -
+<code>dados_stats.csv</code> - Estatisticas agregadas -
+<code>dados_stats_history.csv</code> - Historico temporal -
+<code>dados_failures.csv</code> - Registro de falhas -
+<code>dados_exceptions.csv</code> - Excecoes capturadas</p>
+<p><strong>IMPORTANTE:</strong> Os graficos de RPS x Tempo e Latencia x
+Tempo para TODAS as execucoes (100, 300, 600, 900, 1100 usuarios) estao
+disponiveis nos arquivos <code>index.html</code> dentro de cada pasta de
+resultados. As tabelas apresentadas acima sao especificamente do teste
+com 100 usuarios (baseline e otimizado) para fins de comparacao direta
+no relatorio.</p>
+<p><strong>Para visualizar os relatorios completos com graficos
+interativos, abra os arquivos <code>index.html</code> em um
+navegador.</strong></p>
+<hr />
+<h2 id="analise-de-custo">Analise de Custo</h2>
+<h3 id="custo-horario-da-camada-de-aplicacao">Custo Horario da Camada de
+Aplicacao</h3>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Tipo</th>
+<th>Quantidade</th>
+<th>Preco Unitario/h</th>
+<th>Custo Total/h</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instancias de Aplicacao</td>
+<td>t3.xlarge</td>
+<td>3</td>
+<td>$0.1664</td>
+<td>$0.4992</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>$0.4992</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Orcamento:</strong> $0.50/h<br />
+<strong>Utilizado:</strong> $0.4992/h<br />
+<strong>Margem:</strong> $0.0008/h (<strong>0.16% abaixo do
+limite</strong>)</p>
+<h3 id="custo-beneficio">Custo-Beneficio</h3>
+<ul>
+<li><strong>Investimento:</strong> $0 em infraestrutura adicional
+(apenas tuning)</li>
+<li><strong>Ganho:</strong> +86.5% de throughput</li>
+<li><strong>Reducao de latencia:</strong> 99.6% (P50)</li>
+<li><strong>ROI:</strong> Infinito (investimento zero, ganho
+massivo)</li>
+</ul>
+<h3 id="projecao-de-custo-mensal-730h">Projecao de Custo Mensal
+(730h)</h3>
+<ul>
+<li><strong>Aplicacao:</strong> 3 x t3.xlarge x 730h = $364.42/mes</li>
+<li><strong>Banco de Dados:</strong> 1 x t3.xlarge x 730h =
+$121.47/mes<br />
+</li>
+<li><strong>ALB:</strong> ~$16/mes (estimado)</li>
+<li><strong>Total:</strong> ~$502/mes</li>
+</ul>
+<hr />
+<h2 id="evidencias-e-graficos">Evidencias e Graficos</h2>
+<h3 id="relatorios-do-locust">Relatorios do Locust</h3>
+<p>Os relatorios HTML completos com todos os graficos e metricas estao
+disponiveis no repositorio GitHub nas seguintes pastas:</p>
+<p><strong>Baseline (sem otimizacoes):</strong></p>
+<pre><code>resultados/baseline/resultados_100users_2m_20251223_133044/index.html
+resultados/baseline/resultados_300users_2m_20251223_133324/index.html
+resultados/baseline/resultados_600users_2m_20251223_133613/index.html
+resultados/baseline/resultados_900users_2m_20251223_133902/index.html
+resultados/baseline/resultados_1100users_2m_20251223_134151/index.html</code></pre>
+<p><strong>Otimizado (com Apache mod_cache):</strong></p>
+<pre><code>resultados/otimizado/resultados_100users_2m_20251223_182550/index.html
+resultados/otimizado/resultados_300users_2m_20251223_182816/index.html
+resultados/otimizado/resultados_600users_2m_20251223_183043/index.html
+resultados/otimizado/resultados_900users_2m_20251223_183309/index.html
+resultados/otimizado/resultados_1100users_2m_20251223_183536/index.html</code></pre>
+<p><strong>Nota:</strong> Abra os arquivos <code>index.html</code> em um
+navegador web para visualizar os graficos interativos de: - RPS
+(Requests por Segundo) x Tempo - Latencia (P50, P95, P99) x Tempo -
+Distribuicao de tempos de resposta - Numero de usuarios ativos x
+Tempo</p>
+<h3 id="csvs-para-analise-detalhada">CSVs para Analise Detalhada</h3>
+<p>Cada pasta de resultados contem os seguintes arquivos CSV para
+analise programatica: - <code>dados_stats.csv</code> - Estatisticas
+finais agregadas - <code>dados_stats_history.csv</code> - Serie temporal
+completa - <code>dados_failures.csv</code> - Detalhes de requisicoes
+falhadas - <code>dados_exceptions.csv</code> - Excecoes e erros
+capturados</p>
+<hr />
+<h2 id="conclusao">Conclusao</h2>
+<h3 id="principais-conquistas">Principais Conquistas</h3>
+<ol type="1">
+<li><strong>Performance:</strong> Aumento de 86.5% no throughput
+mantendo o mesmo numero de instancias</li>
+<li><strong>Latencia:</strong> Reducao de 99.6% na latencia mediana
+(980ms → 4ms)</li>
+<li><strong>Custo:</strong> Mantido dentro do orcamento ($0.4992/h &lt;
+$0.50/h)</li>
+<li><strong>Confiabilidade:</strong> 0% de erros em todos os cenarios de
+teste</li>
+<li><strong>Escalabilidade:</strong> Sistema suporta ate 1100 usuarios
+concorrentes sem degradacao</li>
+</ol>
+<h3 id="licoes-aprendidas">Licoes Aprendidas</h3>
+<ol type="1">
+<li><strong>Cache e Rei:</strong> Para aplicacoes com conteudo estatico,
+cache em nivel de servidor oferece o melhor ROI</li>
+<li><strong>Configuracao Importa:</strong>
+<code>CacheQuickHandler off</code> foi critico para resolver 403
+Forbidden com ALB</li>
+<li><strong>Medicao:</strong> Testes sistematicos com Locust permitiram
+validacao objetiva das melhorias</li>
+<li><strong>Trade-offs:</strong> Tuning &gt; Scale-out para este caso de
+uso especifico</li>
+<li><strong>Experiencia Conta:</strong> Conhecimento previo com
+WordPress foi fundamental para identificar a melhor estrategia de
+otimizacao</li>
+</ol>
+<hr />
+<h2 id="anexos">Anexos</h2>
+<h3 id="script-de-otimizacao">Script de Otimizacao</h3>
+<p>O script completo de otimizacao esta disponivel em:
+<code>optimization/apache_mod_cache_otimizado.sh</code></p>
+<p>Versao online:
+https://github.com/luancaarvalho/Trab_dimensionamento/blob/main/optimization/apache_mod_cache_otimizado.sh</p>
+<h3 id="documentacao-tecnica-completa">Documentacao Tecnica
+Completa</h3>
+<p>Documentacao detalhada sobre a implementacao, debugging e resultados:
+<code>optimization/README.md</code></p>
+<p>Versao online:
+https://github.com/luancaarvalho/Trab_dimensionamento/blob/main/optimization/README.md</p>
+</body>
+</html>

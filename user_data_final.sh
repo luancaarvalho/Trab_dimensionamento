@@ -1,8 +1,4 @@
 #!/bin/bash
-# User Data Script para instâncias de aplicação (WordPress)
-# NOTA: Os placeholders (PLACEHOLDER_DB_IP, YOUR_LOAD_BALANCER_DNS) 
-# são substituídos automaticamente pelo deploy_app.sh
-
 yum update -y
 amazon-linux-extras install -y lamp-mariadb10.2-php7.2 php7.2
 yum install -y httpd git
@@ -15,7 +11,7 @@ mv wp-cli.phar /usr/local/bin/wp
 
 cd /var/www/html
 wp core download --allow-root
-wp config create --dbname=wordpress --dbuser=wp_user --dbpass=wp_pass --dbhost=PLACEHOLDER_DB_IP --allow-root
+wp config create --dbname=wordpress --dbuser=wp_user --dbpass=wp_pass --dbhost=10.0.1.83 --allow-root
 
 # --- FIX APACHE CONFIG (AllowOverride) ---
 cat <<CONF > /etc/httpd/conf.d/wp-override.conf
@@ -46,8 +42,8 @@ RewriteRule . /index.php [L]
 HTACCESS
 
 # Ajusta URLs e Permissões Finais
-wp option update home 'http://YOUR_LOAD_BALANCER_DNS' --allow-root
-wp option update siteurl 'http://YOUR_LOAD_BALANCER_DNS' --allow-root
+wp option update home 'http://BenchmarkALB-1315564996.us-east-1.elb.amazonaws.com' --allow-root
+wp option update siteurl 'http://BenchmarkALB-1315564996.us-east-1.elb.amazonaws.com' --allow-root
 chown apache:apache /var/www/html/.htaccess
 chmod 644 /var/www/html/.htaccess
 
